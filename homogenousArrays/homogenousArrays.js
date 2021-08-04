@@ -22,13 +22,10 @@ function homogenousArrays(array) {
         result.push(array[i])
       } else {
         let homogenous = array[i][0];
-        const matches = 0;
+        let matches = 0;
         // Check if each value has same type as first value in the array
         for (let j = 0; j < array[i].length; j++) {
-          console.log('current value: ', array[i][j]);
-          console.log('homogenous: ', homogenous);
-          console.log(typeof(array[i][j]) === typeof(homogeneous));
-          if (typeof(array[i][j]) === typeof(homogeneous)) {
+          if (typeof array[i][j] == typeof homogenous ) {
             // Matches increase
             matches++;
           }
@@ -44,3 +41,4 @@ function homogenousArrays(array) {
 }
 
 console.log(homogenousArrays([[1, 5, 4], ['a', 3, 5], ['b'], [], ['1', 2, 3]])); // should return [[1, 5, 4], ['b']]
+console.log(homogenousArrays([]));

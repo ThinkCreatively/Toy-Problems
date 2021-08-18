@@ -6,10 +6,7 @@ NOTE: that the same word in the dictionary may be reused multiple times in the s
 */
 
 const wordBreak = function(s, wordDict) {
-  // iterate through s
-  for (let i = 0; i < s.length; i++) {
 
-  }
 };
 
 

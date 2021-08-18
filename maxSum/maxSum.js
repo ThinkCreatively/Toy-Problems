@@ -1,5 +1,5 @@
 // In this problem I will be using the sliding window pattern
-// The problem is to find the largest sum made of three integers that are next to each other in the given array
+// The problem is to find the largest sum made of num integers that are next to each other in the given array
 
 function maxSum(array, num) {
   let maxSum = 0;

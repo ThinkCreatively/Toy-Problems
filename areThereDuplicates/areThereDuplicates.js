@@ -19,11 +19,17 @@
 // Multiple Pointers approach
 
 function areThereDuplicates(...args) {
-  let firstPointer = args[0];
-  for (let i = 1; i < args.length; i++) {
-    let secondPointer = args[i];
-    if (firstPointer === secondPointer) {
+  let firstPointer = 0;
+  let secondPointer = 1;
+  while (secondPointer !== args.length) {
+    if (args[firstPointer] === args[secondPointer]) {
       return true;
+    }
+    if (secondPointer === args.length - 1) {
+      firstPointer++;
+      secondPointer = firstPointer + 1;
+    } else {
+      secondPointer++;
     }
   }
   return false;

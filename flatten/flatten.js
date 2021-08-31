@@ -2,20 +2,20 @@
 
 // Helper function
 
-// function flatten(array) {
-//   let result = [];
-//   function getValues(array) {
-//     for (let i = 0; i < array.length; i++) {
-//       if (Array.isArray(array[i])) {
-//         getValues(array[i])
-//       } else {
-//         result.push(array[i]);
-//       }
-//     }
-//   }
-//   getValues(array);
-//   return result;
-// }
+function flatten(array) {
+  let result = [];
+  function getValues(array) {
+    for (let i = 0; i < array.length; i++) {
+      if (Array.isArray(array[i])) {
+        getValues(array[i])
+      } else {
+        result.push(array[i]);
+      }
+    }
+  }
+  getValues(array);
+  return result;
+}
 
 // Recursive function
 

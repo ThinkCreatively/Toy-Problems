@@ -18,8 +18,14 @@ function capitalizeFirst (array) {
 
 // Recursive Function
 
-// function capitalizeFirst (array) {
-
-// }
+function capitalizeFirst(array) {
+  let result = [];
+  if (array.length === 0) return result;
+  array[0] = array[0].split('');
+  array[0][0] = array[0][0].toUpperCase();
+  array[0] = array[0].join('');
+  result.push(array[0]);
+  return result.concat(capitalizeFirst(array.slice(1)))
+}
 
 console.log(capitalizeFirst(['car','taco','banana'])); // ['Car','Taco','Banana']

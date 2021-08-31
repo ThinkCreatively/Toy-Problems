@@ -6,6 +6,6 @@ All toy problems I have worked on with different approaches:
 ~ Multiple Pointers - Using pointers for comparison
 
 ### Recurision
-~ Helper function - Helper function recursion
+~ Helper function - Helper function recursion <br />
 ~ Recursive Function - Single function invoking itself
 

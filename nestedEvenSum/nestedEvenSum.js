@@ -3,30 +3,52 @@
 
 // Helper Function
 
-function nestedEvenSum(obj) {
-  let result = 0;
-  function getEvens(obj) {
-    for (key in obj) {
-      if (typeof obj[key] === 'number') {
-        if (obj[key] % 2 === 0) {
-          result += obj[key];
-        }
-      } else if (typeof obj[key] === 'object') {
-        getEvens(obj[key]);
-      } else {
-        return;
-      }
-    }
-  }
-  getEvens(obj)
-  return result;
-}
+// function nestedEvenSum(obj) {
+//   let result = 0;
+//   function getEvens(obj) {
+//     for (key in obj) {
+//       if (typeof obj[key] === 'number') {
+//         if (obj[key] % 2 === 0) {
+//           result += obj[key];
+//         }
+//       } else if (typeof obj[key] === 'object') {
+//         getEvens(obj[key]);
+//       } else {
+//         return;
+//       }
+//     }
+//   }
+//   getEvens(obj)
+//   return result;
+// }
 
 // Recursive Function
 
-// function nestedEvenSum(obj) {
+function nestedEvenSum(obj) {
+  let result = 0;
+  for (key in obj) {
+    if (typeof obj[key] === 'number') {
+      if (obj[key] % 2 === 0) {
+        result += obj[key];
+      }
+    } else if (typeof obj[key] === 'object') {
+      return result += nestedEvenSum(obj[key]);
+    } else {
+      return result;
+    }
+  }
+}
 
-// }
+function nestedEvenSum(obj, sum = 0) {
+  for (var key in obj) {
+    if (typeof obj[key] === 'object') {
+      sum += nestedEvenSum(obj[key]);
+    } else if (typeof obj[key] === 'number' && obj[key] % 2 === 0) {
+      sum += obj[key];
+    }
+  }
+  return sum;
+}
 
 // Test Cases
 

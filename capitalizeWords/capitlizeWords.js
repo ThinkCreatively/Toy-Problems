@@ -2,19 +2,19 @@
 
 // Helper function
 
-// function capitalizeWords(array) {
-//   let result = [];
-//   function capitalize(array) {
-//     for(word of array) {
-//       word = word.toUpperCase();
-//       result.push(word);
-//       array.shift();
-//       capitalize(array)
-//     }
-//   }
-//   capitalize(array);
-//   return result;
-// }
+function capitalizeWords(array) {
+  let result = [];
+  function capitalize(array) {
+    for(word of array) {
+      word = word.toUpperCase();
+      result.push(word);
+      array.shift();
+      capitalize(array)
+    }
+  }
+  capitalize(array);
+  return result;
+}
 
 // Recursive Function
 

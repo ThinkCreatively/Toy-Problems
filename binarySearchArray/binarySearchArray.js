@@ -37,23 +37,16 @@
 // };
 
 function binarySearch(array, value) {
-  if (array.indexOf(value) === -1) return -1;
   let first = 0;
   let last = array.length - 1;
   let middle = Math.floor((first + last) / 2);
   while (array[middle] !== value && first < last) {
-    if (array[middle] === value) {
-      return middle;
-    }
-    if (array[middle] < value) {
-      first = middle + 1;
-    }
-    if (array[middle] > value) {
-      last = middle - 1;
-    }
+    if (array[middle] === value) return middle;
+    if (array[middle] < value) first = middle + 1;
+    if (array[middle] > value) last = middle - 1;
     middle = Math.floor((first + last) / 2);
   }
-  if (array[middle] === value) return middle;
+  return array[middle] === value ? middle : -1;
 }
 
 

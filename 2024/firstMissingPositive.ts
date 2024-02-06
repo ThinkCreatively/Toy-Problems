@@ -22,8 +22,6 @@ function firstMissingPositive(nums: number[]): number {
   let broke = false;
 
   for (let i = 0; i < sorted.length; i++) {
-    if (sorted[i] < 0) continue;
-
     if (sorted[i] > lastScene + 1) {
       lowest = lastScene + 1;
       broke = true;

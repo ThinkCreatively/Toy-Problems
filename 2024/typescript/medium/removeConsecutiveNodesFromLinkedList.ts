@@ -22,7 +22,7 @@ function removeZeroSumSublists(head: ListNode | null): ListNode | null {
 
   getVals(head);
 
-  let prefixSums = [];
+  let prefixSums: number[] = [];
   let sum = 0;
 
   for (let i = 0; i < values.length; i++) {
@@ -48,7 +48,7 @@ function removeZeroSumSublists(head: ListNode | null): ListNode | null {
   let list = new ListNode(values[0], null);
   values.shift();
 
-  const build = (node: ListNode | null): ListNode => {
+  const build = (node: ListNode) => {
     if (!node.next && values.length > 0) {
       node.next = new ListNode(values[0], null);
       values.shift();

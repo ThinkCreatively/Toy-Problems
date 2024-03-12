@@ -1,4 +1,4 @@
-//TODO: ATTEMPTED NOT COMPLETE
+//TODO: ATTEMPTED NOT COMPLETE, Leetcode problem 1171
 
 class ListNode {
   val: number;
@@ -10,6 +10,7 @@ class ListNode {
 }
 
 function removeZeroSumSublists(head: ListNode | null): ListNode | null {
+  // easier to deal with arrays, get all the values form the linked list
   let values: number[] = [];
 
   const getVals = (node: ListNode | null) => {
@@ -22,6 +23,9 @@ function removeZeroSumSublists(head: ListNode | null): ListNode | null {
 
   getVals(head);
 
+  /*
+
+  TODO: This section is one thought path to try prefix sum
   let prefixSums: number[] = [];
   let sum = 0;
 
@@ -30,8 +34,12 @@ function removeZeroSumSublists(head: ListNode | null): ListNode | null {
     prefixSums.push(sum);
   }
 
+  */
+
+  // deleted flag to track if we have modified the values, WIP
   let deleted = 0;
 
+  // two pointer check for zero sums, delete if it is a zero sum
   for (let i = 0; i < values.length; i++) {
     if (values[i] + values[i + 1] === 0) {
       values.splice(i, 2);
@@ -40,11 +48,14 @@ function removeZeroSumSublists(head: ListNode | null): ListNode | null {
     }
   }
 
+  // Check for cases such [1, -1]
   if (!values.length) return null;
 
   if (!deleted) {
   }
 
+
+  // Once deletions have been completed, build new linked list off of remaining values
   let list = new ListNode(values[0], null);
   values.shift();
 

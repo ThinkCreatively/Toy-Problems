@@ -1,5 +1,6 @@
 # Toy-Problems
 All toy problems I have worked on with different approaches over the years:
+
 ### Aproaches:
 ~ Sliding Window - creating a "window" and moving it across an array or object <br />
 ~ Frequency Counter - Count how many times 'X' appears <br />

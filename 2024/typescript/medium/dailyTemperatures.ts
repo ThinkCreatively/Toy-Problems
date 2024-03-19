@@ -25,4 +25,44 @@ function dailyTemperatures(temperatures: number[]): number[] {
   return result;
 }
 
-dailyTemperatures([30, 60, 90]);
+/*
+Iterations:
+
+ITERATION 1: Brute Force, too slow
+
+function dailyTemperatures(temperatures: number[]): number[] {
+    let result = [];
+
+    for (let i = 0; i < temperatures.length; i++) {
+        let currentTemp = temperatures[i];
+        let nextTemp = temperatures[i + 1];
+
+        if (nextTemp >= currentTemp + 1) {
+            result.push(1);
+        } else {
+            let count = 0;
+            for (let j = i + 1; j <= temperatures.length; j++) {
+                if (temperatures[j] === undefined) {
+                    result.push(0);
+                    break;
+                }
+
+                count++;
+
+                if (temperatures[j] >= currentTemp + 1) {
+                    result.push(count);
+                    break;
+                }
+
+                if (j === temperatures[temperatures.length - 1]) {
+                    result.push(0);
+                }
+            }
+        }
+    }
+
+    return result;
+};
+
+ITERATION 2:
+*/

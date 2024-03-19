@@ -1,25 +1,19 @@
+// 3rd iteration, with modifications for speed
+
 function dailyTemperatures(temperatures: number[]): number[] {
-  let result: number[] = [];
-  let stack: [number, number][] = [];
+  let result = new Array(temperatures.length).fill(0);
+  let stack = [[temperatures[0], 0]];
+  let length = temperatures.length;
 
-  for (let i = 0; i < temperatures.length; i++) {
+  for (let i = 1; i < length; i++) {
     let curTemp = temperatures[i];
-    if (!stack.length) stack.push([curTemp, i]);
 
-    if (curTemp > stack[0][0]) {
-      while (stack[0] && curTemp > stack[0][0]) {
-        result.splice(stack[0][1], 0, i - stack[0][1]);
-        stack.shift();
-      }
-
-      stack.unshift([curTemp, i]);
-    } else {
-      stack.unshift([curTemp, i]);
+    while (stack.length > 0 && curTemp > stack[stack.length - 1][0]) {
+      result[stack[stack.length - 1][1]] = i - stack[stack.length - 1][1];
+      stack.pop();
     }
-  }
 
-  for (let i = 0; i < stack.length; i++) {
-    result.push(0);
+    stack.push([curTemp, i]);
   }
 
   return result;

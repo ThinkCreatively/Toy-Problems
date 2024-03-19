@@ -64,5 +64,32 @@ function dailyTemperatures(temperatures: number[]): number[] {
     return result;
 };
 
-ITERATION 2:
+ITERATION 2: Using stack, too slow
+
+function dailyTemperatures(temperatures: number[]): number[] {
+    let result = new Array(temperatures.length);
+    let stack = [[temperatures[0], 0]];
+
+    for (let i = 1; i < temperatures.length; i++) {
+        let curTemp = temperatures[i];
+
+        if (curTemp > stack[0][0]) {
+            while (stack[0] && curTemp > stack[0][0]) {
+                result.splice(stack[0][1], 1, i - stack[0][1]);
+                stack.shift();
+            }
+
+            stack.unshift([curTemp, i]);
+        } else {
+            stack.unshift([curTemp, i]);
+        }
+    }
+
+    while (stack[0]) {
+        result.splice(stack[0][1], 1, 0);
+        stack.shift();
+    }
+
+    return result;
+};
 */

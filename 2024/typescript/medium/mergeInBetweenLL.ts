@@ -1,14 +1,11 @@
-/**
- * Definition for singly-linked list.
- * class ListNode {
- *     val: number
- *     next: ListNode | null
- *     constructor(val?: number, next?: ListNode | null) {
- *         this.val = (val===undefined ? 0 : val)
- *         this.next = (next===undefined ? null : next)
- *     }
- * }
- */
+class ListNode {
+  val: number;
+  next: ListNode | null;
+  constructor(val?: number, next?: ListNode | null) {
+    this.val = val === undefined ? 0 : val;
+    this.next = next === undefined ? null : next;
+  }
+}
 
 function mergeInBetween(
   list1: ListNode | null,
@@ -17,9 +14,9 @@ function mergeInBetween(
   list2: ListNode | null
 ): ListNode | null {
   let node = list1;
-  let l1values = [];
-  let l2values = [];
-  let resVals = [];
+  let l1values: number[] = [];
+  let l2values: number[] = [];
+  let resVals: number[] = [];
 
   while (node !== null) {
     l1values.push(node.val);
@@ -49,7 +46,7 @@ function mergeInBetween(
   let result = new ListNode(resVals[0], null);
   let count = 1;
 
-  const createList = (node: ListNode | null) => {
+  const createList = (node: ListNode) => {
     if (count === resVals.length - 1) {
       node.next = new ListNode(resVals[count], null);
       return;

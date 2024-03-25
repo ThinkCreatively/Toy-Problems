@@ -23,12 +23,18 @@ function reorderList(head: ListNode | null): void {
 
   let count = 0;
 
-  const change = (node: ListNode | null) => {
-    if (!node) return;
-    node.val = order[count];
+  while (head) {
+    head.val = order[count];
     count++;
-    change(node.next);
-  };
+    head = head.next;
+  }
 
-  change(head);
+  // const change = (node: ListNode | null) => {
+  //   if (!node) return;
+  //   node.val = order[count];
+  //   count++;
+  //   change(node.next);
+  // };
+
+  // change(head);
 }

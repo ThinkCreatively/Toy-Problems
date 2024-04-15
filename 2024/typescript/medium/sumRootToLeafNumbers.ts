@@ -1,6 +1,5 @@
 function sumNumbers(root: TreeNode | null): number {
   let nums: number[] = [];
-  let result = 0;
   let temp = "";
 
   const traverse = (node: TreeNode, temp: string) => {
@@ -23,9 +22,5 @@ function sumNumbers(root: TreeNode | null): number {
 
   traverse(root as TreeNode, temp);
 
-  for (let num of nums) {
-    result += num;
-  }
-
-  return result;
+  return nums.reduce((acc, el) => (acc += el), 0);
 }

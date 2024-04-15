@@ -45,3 +45,5 @@ function trap(height: number[]): number {
 
   return amount;
 }
+
+let duplicatedsArr = [1];

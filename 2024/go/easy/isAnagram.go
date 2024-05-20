@@ -5,6 +5,7 @@ import (
 	"unicode"
 )
 
+//lint:ignore U1000 Ignore unused function
 func isAnagram(s string, t string) bool {
 	sRunes := map[rune]int{}
 	tRunes := map[rune]int{}

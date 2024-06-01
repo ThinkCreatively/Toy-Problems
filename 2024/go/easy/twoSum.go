@@ -1,4 +1,4 @@
-package main
+package easy
 
 //lint:ignore U1000 Ignore unused function
 func twoSum(nums []int, target int) []int {

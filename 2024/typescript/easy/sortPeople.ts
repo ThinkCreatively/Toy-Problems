@@ -20,3 +20,28 @@ function sortPeople(names: string[], heights: number[]): string[] {
 
   return result;
 }
+
+// Alternate Solution:
+// function sortPeople(names: string[], heights: number[]): string[] {
+//   let result = [];
+//   let lowest = Infinity;
+//   let index = null;
+//   let length = names.length;
+
+//   while (result.length !== length) {
+//       for (let i = 0; i < heights.length; i++) {
+//           if (heights[i] < lowest) {
+//               lowest = heights[i];
+//               index = i;
+//           }
+//       }
+
+//       result.push(names[index]);
+//       heights.splice(index, 1);
+//       names.splice(index, 1);
+//       lowest = Infinity;
+//       index = null;
+//   }
+
+//   return result.reverse();
+// };

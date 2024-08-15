@@ -1,7 +1,7 @@
 function lemonadeChange(bills: number[]): boolean {
-  let fives = [];
-  let tens = [];
-  let twenties = [];
+  let fives: number[] = [];
+  let tens: number[] = [];
+  let twenties: number[] = [];
 
   for (let i = 0; i < bills.length; i++) {
     if (bills[i] === 5) {
